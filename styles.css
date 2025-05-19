@@ -1,0 +1,202 @@
+header, h2 {
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    background-color: pink;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    display: flex;
+    flex-direction: column; /* This makes image on top, text below */
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    width: 100px;
+    text-align: center;
+}
+
+nav img {
+    width: 135px;  
+    height: 140px;
+    margin-bottom: 10px;
+}
+
+body {
+    background-color: #ffe6f0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+p {
+    text-align: justify;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+    line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.section {
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: justify;
+    color: #333;
+}
+
+.color1 {
+    background-color: #e0f7fa;
+}
+
+.color2 {
+    background-color: rgb(194, 255, 199);
+}
+
+.color3 {
+    background-color: #fff3e0;
+}
+
+.flower-strip {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px; /* increase height to fully fit the flower */
+    overflow: visible; /* let image overflow if needed */
+    z-index: -1; /* keeps it behind content */
+}
+
+.flower-strip img {
+    position: absolute;
+    bottom: 0;
+    width: 150px;
+    height: auto;
+    animation: moveFlower 30s linear infinite, rotateFlower 10s linear infinite;
+}
+
+/* Flower rotates 360 degrees */
+@keyframes rotateFlower {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.profile-pic {
+    text-align: center;  /* centers the image */
+    margin: 20px 0;
+}
+
+.profile-pic img {
+    width: 300px;        /* adjust size */
+    height: auto;        /* keeps image ratio */
+}
+
+table {
+    width: 80%; /* Set width to a percentage of the screen, adjust as needed */
+    max-width: 900px; /* Set a maximum width for very large screens */
+    margin: 20px auto; /* Center the table horizontally with margin auto */
+    border-collapse: collapse; /* Collapse borders for a cleaner look */
+}
+
+th, td {
+    border: 1px solid #42066534;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: pink;
+    color: #333;
+}
+
+tr:nth-child(even) {
+    background-color: #ffc4fe;
+}
+
+tr:hover {
+    background-color: #c2ecff;
+}
+
+@keyframes swing {
+    0% {
+      transform: rotate(-15deg);
+    }
+    50% {
+      transform: rotate(15deg);
+    }
+    100% {
+      transform: rotate(-15deg);
+    }
+}
+
+.book-strip {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    padding-left: 35px; /* Shift everything inside to the right */
+    overflow: visible; /* let image overflow if needed */
+    z-index: -1; /* keeps it behind content */
+}
+
+.book-image {
+    width: 9%;
+    height: auto;
+    animation: swing 2s ease-in-out infinite; /* Apply swing animation */
+}
+  
+ul {
+    list-style-position: inside;
+    padding: 0;
+}
+  
+li {
+    text-align: center;
+    line-height: 1.6;        /* Optional: improves readability */
+    margin-bottom: 8px; 
+}
+
+@keyframes fly-across {
+  0% {
+    transform: translateX(-200px) translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(50vw) translateY(-50px) rotate(20deg);
+  }
+  100% {
+    transform: translateX(110vw) translateY(100px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+.airplane {
+  position: fixed;
+  top: 70%;  /* You can adjust height from top */
+  left: -200px;  /* Starts off screen */
+  width: 80px;   /* Adjust size */
+  height: auto;
+  animation: fly-across 6s ease-in-out infinite;
+  z-index: 999;
+}
